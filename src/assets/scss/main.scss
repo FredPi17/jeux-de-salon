@@ -1,0 +1,44 @@
+@import 'variables';
+@import 'positioning';
+@import 'flexbox';
+@import 'scroll';
+@import 'background';
+@import 'fonts';
+@import 'sizes';
+
+*,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+
+html,
+body,
+#app {
+  text-size-adjust: 100%;
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: Manrope, serif;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+  background: $fade;
+  scrollbar-width: thin;
+  scrollbar-color: lightgray transparent;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+*:focus {
+  outline: 0;
+}

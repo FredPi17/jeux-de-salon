@@ -1,0 +1,28 @@
+::-webkit-scrollbar {
+  display: block;
+  height: 7px;
+  width: 7px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $font-disable;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.scroll-bar {
+  scrollbar-width: thin;
+  scrollbar-color: $font-disable transparent;
+}
+
+.overflow-scroll {
+  overflow: scroll;
+}
+
+.overflow-auto {
+  overflow: auto;
+}

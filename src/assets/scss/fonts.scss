@@ -1,0 +1,159 @@
+.font-200 {
+  font-weight: 200;
+}
+
+.font-300 {
+  font-weight: 300;
+}
+
+.font-400 {
+  font-weight: 400;
+}
+
+.font-500 {
+  font-weight: 500;
+}
+
+.font-600 {
+  font-weight: 600;
+}
+
+.font-700 {
+  font-weight: 700 !important;
+}
+
+.font-size-14 {
+  font-size: 14px !important;
+}
+
+.font-size-16 {
+  font-size: 16px !important;
+}
+
+.font-size-18 {
+  font-size: 18px !important;
+}
+
+.font-size-20 {
+  font-size: 20px !important;
+}
+
+.font-size-22 {
+  font-size: 22px !important;
+}
+
+.font-size-24 {
+  font-size: 24px !important;
+}
+
+.font-size-32 {
+  font-size: 32px !important;
+}
+
+.line-height {
+  line-height: 25px !important;
+}
+
+.font-color-black {
+  color: black;
+}
+
+.font-color-white {
+  color: white;
+}
+
+.font-color-default {
+  color: $font;
+}
+
+.font-color-primary {
+  color: $primary;
+}
+
+.font-color-font-light {
+  color: $font-light;
+}
+
+.font-color-warning {
+  color: $warning;
+}
+
+.font-color-success {
+  color: $success;
+}
+
+.a-display {
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 56px;
+}
+
+.a-title {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 32px;
+}
+
+.a-heading {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.a-body {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.a-caption-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.a-caption {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.a-subcaption {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.a-button-1 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.a-button-2 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.a-label {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.a-legend-1 {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.a-legend-2 {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
