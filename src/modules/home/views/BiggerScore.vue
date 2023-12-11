@@ -1,21 +1,36 @@
 <template>
     
     <main>
+        <div class="description">
+            <p>Ce mode de jeu consiste à faire le plus gros score. Les joueurs tirent une fléchette tour à tour, et comptent respectivement leurs points. Chaque joueur rentre ensuite son score. Celui qui a fait le plus de points à la fin de la dernière manche gagne la partie.</p>
+        </div>
       <div class="container">
+        
           <div class="not-started" v-if="notStarted">
-            <form @submit.prevent="addParticipant">
-              <label>
-                  Nom du participant :
-                  <input v-model="newParticipant" type="text" required />
-              </label>
-              <label>
-                Nombre de manches :
-                  <input v-model="nbCoups" type="number" />
-              </label>
-              <div v-for="(user, index) in participants"><p>{{ user.name }}</p></div>
-              <button type="submit">Ajouter</button>
-            </form>
-            <button @click="submitPlayers">Lancer la partie</button>
+            <p>
+                <form @submit.prevent="addParticipant">
+                <label>
+                    Nom du participant :
+                    <input v-model="newParticipant" type="text" required />
+                </label>
+                <button type="submit">Ajouter</button>
+                <p>Participants : </p>
+                <div v-for="(user, index) in participants"><p>  - {{ user.name }}</p></div>
+                
+                </form>
+                <br />
+                <form @submit.prevent="setManches">
+                    <label>
+                    Nombre de manches :
+                    <input v-model="nbCoups" type="number" />
+                </label>
+                <button type="submit">Soumettre manches</button>
+                <p>Nombre de manches configurées : <b>{{ manches }}</b></p>
+                
+                </form>
+                <br />
+                <button @click="submitPlayers">Lancer la partie</button>
+            </p>
           </div>
   
       <div v-if="!notStarted ">
@@ -70,9 +85,12 @@
               this.participants.push({"name": this.newParticipant, "value": []});
               this.newParticipant = ''; // Efface le champ après l'ajout
           }
-          if (this.nbCoups !== undefined) {
-            this.manches = this.nbCoups
-          }
+        },
+        setManches() {
+            console.log(this.nbCoups)
+            if (this.nbCoups !== undefined || this.nbCoups !== '') {
+                this.manches = this.nbCoups
+            }
         },
         submitValues() {
           // add value on user and check conditions of game
@@ -132,6 +150,10 @@
     };
   </script>
   <style scoped>
+  .description {
+    padding: 20px;
+    }
+
   .container {
     display: flex;
   }
