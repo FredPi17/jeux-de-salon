@@ -29,11 +29,13 @@
                     </div>
                 </div>
                 <div class="right-pane" v-if="!this.gameFinished">
-                    <label>
-                        Valeur :
-                        <input v-model="value" type="number"/> 
-                    </label>
-                    <button @click="submitValues()">Soumettre</button>
+                    <form @submit.prevent="submitValues">
+                        <label>
+                            Valeur :
+                            <input v-model="value" type="number"/> 
+                        </label>
+                        <button type="submit" >Soumettre</button>
+                    </form>
                 </div>
                 <div class="right-pane" v-else>
                     <h2>Partie terminée !!! </h2>
