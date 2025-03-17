@@ -1,9 +1,11 @@
+@use "variables";
+
 .bg-fade {
-  background: $fade;
+  background: variables.$fade;
 }
 
 .bg-white {
-  background: $white;
+  background: variables.$white;
 }
 
 .bg-transparent {

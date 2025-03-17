@@ -20,9 +20,13 @@ export default {
 .navbar {
   background-color: #333;
   padding: 10px;
-  display: flex;
+  display: inline-flex;
+  width: 100%;
+  position: fixed;
   justify-content: space-around;
   align-items: center;
+  top: 0;
+  left: 0;
 }
 
 /* Styles des liens de la barre de navigation */

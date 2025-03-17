@@ -1,10 +1,10 @@
-@import 'variables';
-@import 'positioning';
-@import 'flexbox';
-@import 'scroll';
-@import 'background';
-@import 'fonts';
-@import 'sizes';
+@use 'variables';
+@use 'positioning';
+@use 'flexbox';
+@use 'scroll';
+@use 'background';
+@use 'fonts';
+@use 'sizes';
 
 *,
 *::before {
@@ -25,8 +25,9 @@ body,
   font-family: Manrope, serif;
   margin: 0;
   padding: 0;
+  padding-top: 15px;
   font-size: 0.9rem;
-  background: $fade;
+  background: variables.$fade;
   scrollbar-width: thin;
   scrollbar-color: lightgray transparent;
 }

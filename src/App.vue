@@ -13,12 +13,12 @@ import  NavBar  from "@/modules/home/routes/NavBar.vue";
 </script>
 
 <style lang="scss" scoped>
+
 #header {
   // for demo
   display: flex;
   justify-content: center;
   padding: 16px;
-  background: white;
 }
 
 #app-content {

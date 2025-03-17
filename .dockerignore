@@ -1,0 +1,14 @@
+./.husky
+./.vscode
+./node_modules
+.env.example
+.eslintignore
+.eslintrc.cjs
+.gitignore
+.prettierrc.json
+commitlint.config.ts
+docker-compose.yml
+README.md
+package-lock.json
+stylelint.config.js
+vitest.config.ts

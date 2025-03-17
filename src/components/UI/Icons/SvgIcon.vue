@@ -11,5 +11,3 @@ defineProps<{
     <use :color="color" :height="size" :href="`#icon-${name}`" :width="size" />
   </svg>
 </template>
-
-<style lang="scss" scoped></style>

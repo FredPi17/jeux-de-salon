@@ -1,3 +1,5 @@
+@use "variables";
+
 ::-webkit-scrollbar {
   display: block;
   height: 7px;
@@ -6,7 +8,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $font-disable;
+  background: variables.$font-disable;
   border-radius: 50px;
 }
 
@@ -16,7 +18,7 @@
 
 .scroll-bar {
   scrollbar-width: thin;
-  scrollbar-color: $font-disable transparent;
+  scrollbar-color: variables.$font-disable transparent;
 }
 
 .overflow-scroll {

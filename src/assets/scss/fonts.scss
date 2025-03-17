@@ -1,3 +1,5 @@
+@use "variables";
+
 .font-200 {
   font-weight: 200;
 }
@@ -63,23 +65,23 @@
 }
 
 .font-color-default {
-  color: $font;
+  color: variables.$font;
 }
 
 .font-color-primary {
-  color: $primary;
+  color: variables.$primary;
 }
 
 .font-color-font-light {
-  color: $font-light;
+  color: variables.$font-light;
 }
 
 .font-color-warning {
-  color: $warning;
+  color: variables.$warning;
 }
 
 .font-color-success {
-  color: $success;
+  color: variables.$success;
 }
 
 .a-display {

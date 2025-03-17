@@ -7,8 +7,7 @@ module.exports = {
     "plugin:vue/vue3-essential",
     "eslint:recommended",
     "@vue/eslint-config-typescript",
-    "@vue/eslint-config-prettier/skip-formatting",
-    "plugin:storybook/recommended",
+    "@vue/eslint-config-prettier/skip-formatting"
   ],
   plugins: ["storybook"],
   parserOptions: {

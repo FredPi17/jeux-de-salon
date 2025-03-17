@@ -1,0 +1,7 @@
+services:
+  fleche:
+    container_name: fleche
+    build:
+      context: ./
+    ports:
+      - 3000:80
