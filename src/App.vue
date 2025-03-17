@@ -1,5 +1,4 @@
 <template>
-  <!--    demo header-->
   <header id="header">
     <NavBar></NavBar>
   </header>

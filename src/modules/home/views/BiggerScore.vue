@@ -5,57 +5,55 @@
             <p>Ce mode de jeu consiste à faire le plus gros score. Les joueurs tirent une fléchette tour à tour, et comptent respectivement leurs points. Chaque joueur rentre ensuite son score. Celui qui a fait le plus de points à la fin de la dernière manche gagne la partie.</p>
         </div>
       <div class="container">
-        
-          <div class="not-started" v-if="notStarted">
-            <p>
-                <form @submit.prevent="addParticipant">
-                <label>
-                    Nom du participant :
-                    <input v-model="newParticipant" type="text" required />
-                </label>
-                <button type="submit">Ajouter</button>
-                <p>Participants : </p>
-                <div v-for="(user, index) in participants"><p>  - {{ user.name }}</p></div>
-                
-                </form>
-                <br />
-                <form @submit.prevent="setManches">
-                    <label>
-                    Nombre de manches :
-                    <input v-model="nbCoups" type="number" />
-                </label>
-                <button type="submit">Soumettre manches</button>
-                <p>Nombre de manches configurées : <b>{{ manches }}</b></p>
-                
-                </form>
-                <br />
-                <button @click="submitPlayers">Lancer la partie</button>
-            </p>
+        <div class="not-started" v-if="notStarted">
+          <p>Entrez les participants et définissez le nombre de manches.</p>
+          <form @submit.prevent="addParticipant">
+            <label for="name">Nom du participant</label>
+            <input type="text" id="name" placeholder="Entrez un nom" v-model="newParticipant">
+            <button type="submit">Ajouter</button>
+          </form>
+          
+
+          <div class="participants-list">
+            <p>Participants :</p>
+            <div v-for="(user, index) in participants"><p>  - {{ user.name }}</p></div>
           </div>
-  
-      <div v-if="!notStarted ">
+          <form @submit.prevent="setManches">
+            <label for="rounds">Nombre de manches :</label>
+              <select v-model="nbCoups" id="rounds">
+                <option>5</option>
+                <option>10</option>
+                <option>15</option>
+                <option>20</option>
+              </select>
+            <button type="submit">Soummettre manches</button>
+          </form>
+          <p><strong>Nombre de manches configurées :</strong> {{ manches }}</p>
+          <button @click="submitPlayers">Lancer la partie</button>
+        </div>
+
+      <div v-if="!notStarted && !scoreCalculated">
         <h2 class="centered">Manche <b>{{ currentManche }}</b> / {{ manches }}</h2>
-        <div class="left-pane" >
+        <div >
           <div class="user-block"  v-for="(user, index) in users" :key="index">
             <h3>Joueur : <b>{{ user.name }}</b></h3>
             <p>Coups précédents : {{ user.value }}</p>
             <h4 v-if="scoreCalculated">{{ user.score }}</h4>
           </div>
         </div>
-        <div class="right-pane" v-if="!this.scoreCalculated">
-            <form @submit.prevent="submitValues">
-                <label>
-                    Valeur :
-                    <input v-model="value" type="number" />
-                </label>
-                <button type="submit">Soumettre</button>
-            </form>
-        </div>
-        <div class="right-pane" v-else>
-          <h2>Partie terminée !!! </h2>
-          <h3>Winner is {{ winner.name }} avec {{ winner.score }}</h3>
-        </div>
-      </div>  
+        <form @submit.prevent="submitValues">
+            <label>
+                Valeur :
+                <input v-model="value" type="number" />
+            </label>
+            <button type="submit">Soumettre</button>
+        </form>
+      </div>
+      <div v-else class="centered">
+        <h2>Partie terminée !!! </h2>
+        <h3>Winner is {{ winner.name }} avec {{ winner.score }}</h3>
+      </div>
+      
       </div>
     </main>
   </template>
@@ -152,6 +150,44 @@
     };
   </script>
   <style scoped>
+  
+  label {
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+  }
+
+  input, select {
+    width: 80%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  button {
+      width: 85%;
+      background-color: #28a745;
+      color: white;
+      padding: 10px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+  }
+
+  button:hover {
+      background-color: #218838;
+  }
+
+  .participants-list {
+      margin-top: 10px;
+      font-weight: bold;
+  }
+
   .description {
     padding: 20px;
     }
@@ -176,19 +212,5 @@
     display: flex;
     align-content: center;
   }
-  
-  .left-pane, .right-pane {
-    height: 100%;
-    width: 50%;
-    position: fixed;
-    top: 20;
-    overflow-x: hidden;
-    padding-top: 20px;
-    flex: 1;
-  }
-  
-  .right-pane {
-    right: 0;
-    background-color: #eee;
-  }
+
   </style>
